@@ -1,0 +1,355 @@
+/* Small, site-specific additions to LaTeX.css. The document itself stays plain HTML. */
+
+:root {
+  --black: #000;
+  --white: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--white);
+  color: var(--black);
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: var(--black);
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.site-header,
+.site-footer {
+  border-color: var(--black);
+  font-size: 0.9rem;
+  margin: 0 auto;
+  max-width: 72rem;
+  padding: 1.4rem 2rem;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--black);
+}
+
+.site-header .last-updated {
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-style: italic;
+  margin: 0.45rem 0 0;
+  text-align: right;
+}
+
+.site-header nav,
+.site-footer {
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+}
+
+.site-name {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.site-nav-links {
+  display: flex;
+  gap: 1.3rem;
+}
+
+.site-nav-links a[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 72rem;
+  padding: 0 2rem;
+}
+
+.portfolio-document {
+  margin: 0 auto;
+  max-width: 54rem;
+  padding: 1.5rem 0 5rem;
+}
+
+.document-header {
+  margin-bottom: 4.5rem;
+}
+
+.portrait-sidebar {
+  left: 2rem;
+  position: absolute;
+  top: 12rem;
+}
+
+.portrait-slot {
+  aspect-ratio: 3 / 4;
+  border: 1px solid var(--black);
+  width: 10rem;
+}
+
+.portrait-slot img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.last-updated {
+  letter-spacing: normal;
+}
+
+.abstract {
+  border-bottom: 1px solid var(--black);
+  margin: 0;
+  max-width: none;
+  padding: 1.2rem 0;
+  text-align: left;
+}
+
+.abstract p {
+  text-align: left;
+}
+
+.abstract h2 {
+  margin-top: 0;
+}
+
+.abstract p {
+  margin-bottom: 0;
+}
+
+.portfolio-document h1,
+.portfolio-document h2,
+.portfolio-document h3,
+.portfolio-document h4,
+.portfolio-document h5,
+.portfolio-document h6 {
+  text-align: left;
+}
+
+section {
+  margin-bottom: 4.5rem;
+}
+
+section > h2 {
+  border-bottom: 1px solid var(--black);
+  padding-bottom: 0.35rem;
+}
+
+.timeline {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+}
+
+.timeline li {
+  border-left: 1px solid var(--black);
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 10rem 1fr;
+  padding: 0 0 2.4rem 2.2rem;
+  position: relative;
+}
+
+.timeline li:last-child {
+  padding-bottom: 0;
+}
+
+.timeline li::before {
+  background: var(--white);
+  border: 1px solid var(--black);
+  border-radius: 50%;
+  content: "";
+  height: 0.85rem;
+  left: -0.48rem;
+  position: absolute;
+  top: 0.2rem;
+  width: 0.85rem;
+}
+
+.timeline-date {
+  font-size: 0.85rem;
+  padding-top: 0.1rem;
+}
+
+.timeline-entry h3 {
+  font-size: 1.1rem;
+  margin: 0 0 0.4rem;
+}
+
+.timeline-entry p {
+  margin: 0;
+}
+
+.afterword {
+  border-top: 1px solid var(--black);
+  padding-top: 1.1rem;
+}
+
+.afterword dl {
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  margin-bottom: 0;
+}
+
+.afterword dt,
+.afterword dd {
+  border-bottom: 1px solid var(--black);
+  margin: 0;
+  padding: 0.6rem 0;
+}
+
+.afterword dt {
+  font-style: italic;
+}
+
+.site-footer {
+  border-top: 1px solid var(--black);
+  border-bottom: 0;
+  margin-top: 0;
+  padding-bottom: 2rem;
+  padding-top: 1.4rem;
+}
+
+.drawings-document {
+  padding-bottom: 3rem;
+}
+
+.drawing-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.drawing-item {
+  margin: 0;
+}
+
+.drawing-item img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.drawing-item figcaption {
+  padding-top: 0.6rem;
+}
+
+.drawing-item figcaption::before {
+  content: none;
+}
+
+.drawing-note {
+  border-top: 1px solid var(--black);
+  padding-top: 1.1rem;
+}
+
+.drawing-note p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .portrait-sidebar {
+    margin-top: 1.5rem;
+    position: static;
+  }
+}
+
+.blog-page-title {
+  border-bottom: 1px solid var(--black);
+  margin: 0 0 1.5rem;
+  padding-bottom: 0.35rem;
+}
+
+.blog-list {
+  margin: 0;
+}
+
+.blog-entry {
+  border-top: 1px solid #d5d5d5;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 9rem 1fr;
+  padding: 1rem 0 1.1rem;
+}
+
+.blog-entry:last-child {
+  border-bottom: 1px solid #d5d5d5;
+}
+
+.blog-date {
+  font-size: 0.8rem;
+}
+
+.blog-entry h3 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.blog-entry a {
+  text-decoration: none;
+}
+
+.article-date {
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 640px) {
+  .site-header,
+  .site-footer,
+  main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .site-header nav,
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .site-nav-links {
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+  }
+
+  .portfolio-document {
+    padding-top: 1.5rem;
+  }
+
+  .timeline li {
+    display: block;
+    padding-left: 1.7rem;
+  }
+
+  .timeline-date {
+    margin-bottom: 0.5rem;
+  }
+
+  .afterword dl {
+    grid-template-columns: 8rem 1fr;
+  }
+
+  .blog-entry {
+    display: block;
+  }
+
+  .blog-date {
+    display: block;
+    margin-bottom: 0.45rem;
+    text-align: left;
+  }
+
+}
