@@ -12,9 +12,25 @@ const sharedHeader = `
   <p class="last-updated">last updated Aug 2026</p>
 </header>`;
 
+const sharedBlogFooter = `
+<footer class="site-footer">
+  <span><a href="${siteRoot}index.html">← back to about</a></span>
+  <span class="blog-feedback">
+    find something you think is wrong? <a href="mailto:medininb02@gmail.com">email me</a>
+  </span>
+</footer>`;
+
 document.querySelectorAll("[data-shared-header]").forEach((placeholder) => {
   placeholder.outerHTML = sharedHeader;
 });
+
+document.querySelectorAll("[data-blog-footer]").forEach((placeholder) => {
+  placeholder.outerHTML = sharedBlogFooter;
+});
+
+if (document.querySelector(".article-document, .blog-document")) {
+  document.body.classList.add("blog-page");
+}
 
 const currentPath = window.location.pathname;
 const currentPage = currentPath.includes("/articles/")

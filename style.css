@@ -14,6 +14,13 @@ body {
   color: var(--black);
 }
 
+body.blog-page {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 a,
 a:visited,
 a:hover,
@@ -72,6 +79,17 @@ main {
   margin: 0 auto;
   max-width: 72rem;
   padding: 0 2rem;
+}
+
+body.blog-page > .site-header,
+body.blog-page > main,
+body.blog-page > .site-footer {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+body.blog-page > main {
+  flex: 1;
 }
 
 .portfolio-document {
@@ -282,6 +300,10 @@ section > h2 {
   padding: 1rem 0 1.1rem;
 }
 
+.blog-entry:first-child {
+  border-top: 0;
+}
+
 .blog-entry:last-child {
   border-bottom: 1px solid #d5d5d5;
 }
@@ -303,6 +325,10 @@ section > h2 {
   font-size: 0.8rem;
   font-style: italic;
   margin-bottom: 1rem;
+}
+
+.blog-feedback {
+  font-size: 0.9rem;
 }
 
 @media (max-width: 640px) {
