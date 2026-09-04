@@ -252,9 +252,11 @@ section > h2 {
   margin: 0;
 }
 
-.drawing-item img {
+.drawing-item img,
+.drawing-item video {
   display: block;
   height: auto;
+  max-width: 100%;
   width: 100%;
 }
 

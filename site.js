@@ -1,15 +1,16 @@
 const siteRoot = new URL("./", document.currentScript.src);
 
 const sharedHeader = `
-<header class="site-header">
+<header class="site-header" id="page-top">
   <nav aria-label="Primary navigation">
     <a class="site-name" href="${siteRoot}index.html">Medini Narasimha Bailkeri</a>
     <span class="site-nav-links">
       <a href="${siteRoot}drawings.html" data-page="drawings.html">drawings</a>
+      <a href="${siteRoot}animations.html" data-page="animations.html">animations</a>
       <a href="${siteRoot}blogs.html" data-page="blogs.html">blogs</a>
     </span>
   </nav>
-  <p class="last-updated">last updated Aug 2026</p>
+  <p class="last-updated">last updated Sept 2026</p>
 </header>`;
 
 const sharedBlogFooter = `
