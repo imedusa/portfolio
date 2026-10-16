@@ -1,4 +1,5 @@
 const siteRoot = new URL("./", document.currentScript.src);
+const isBlogPage = Boolean(document.querySelector(".article-document, .blog-document"));
 
 const sharedHeader = `
 <header class="site-header" id="page-top">
@@ -13,28 +14,30 @@ const sharedHeader = `
     <p class="last-updated">last updated Oct 2026</p>
 </header>`;
 
-const sharedBlogFooter = `
+const footerDetails = isBlogPage
+    ? `<span>find something you think is wrong? <a href="mailto:medininb02@gmail.com">email me</a></span>`
+    : `<span><a href="#page-top">↑ back to top</a></span>`;
+
+const sharedFooter = `
 <footer class="site-footer">
     <span><a href="${siteRoot}index.html">← back to about</a></span>
-    <span class="blog-feedback">
-        find something you think is wrong? <a href="mailto:medininb02@gmail.com">email me</a>
-    </span>
+    ${footerDetails}
 </footer>`;
 
 document.querySelectorAll("[data-shared-header]").forEach((placeholder) => {
     placeholder.outerHTML = sharedHeader;
 });
 
-document.querySelectorAll("[data-blog-footer]").forEach((placeholder) => {
-    placeholder.outerHTML = sharedBlogFooter;
+document.querySelectorAll("[data-shared-footer]").forEach((placeholder) => {
+    placeholder.outerHTML = sharedFooter;
 });
 
-if (document.querySelector(".article-document, .blog-document")) {
+if (isBlogPage) {
     document.body.classList.add("blog-page");
 }
 
 const currentPath = window.location.pathname;
-const currentPage = currentPath.includes("/articles/")
+const currentPage = isBlogPage
     ? "blogs.html"
     : currentPath.split("/").pop() || "index.html";
 const currentLink = document.querySelector(`[data-page="${currentPage}"]`);
